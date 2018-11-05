@@ -1,0 +1,4 @@
+gen = a & b
+pro = a ^ b
+C(i) = gen + pro&C(i-1)
+sum = p ^ C(i-1)
