@@ -1,0 +1,6 @@
+判断fifo是否为满或是否为空
+assign fbit_comp = wptr[4]^rptr[4];
+assign  pointer_equal = (wptr[3:0] - rptr[3:0]) ?0:1;
+fifo_full = fbit_comp & pointer_equal;
+fifo_empty = (~fbit_comp) & pointer_equal;
+低四位相等，最高位如果相同，则FIFO为空；若最高位不同，则FIFO为满。
